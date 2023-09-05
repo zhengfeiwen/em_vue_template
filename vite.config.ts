@@ -12,6 +12,7 @@ import viteImagemin from 'vite-plugin-imagemin' // 打包压缩图片
 import vuejsx from '@vitejs/plugin-vue-jsx' // 此插件支持在vue3中使用jsx/tsx语法
 import vueSetupExtend from 'vite-plugin-vue-setup-extend' // setup语法糖name增强，使vue3语法糖支持name属性
 import postcssPresetEnv from 'postcss-preset-env' // PostCSS 是一个用 JavaScript 工具和插件转换 CSS 代码的工具 添加webkit前缀
+import { fileURLToPath, URL } from 'url'
 import { resolve } from 'path'
 
 // https://vitejs.dev/config/
@@ -48,7 +49,7 @@ export default ({ mode }) => defineConfig({
     }),
     Components({
       dirs: ['src/components'], // 目标文件夹
-      extensions: ['vue', 'jsx'], // 文件类型
+      extensions: ['vue', 'tsx'], // 文件类型
       dts: 'src/components.d.ts', // 输出文件，里面都是一些import的组件键值对
       // ui库解析器，也可以自定义，需要安装相关UI库
       resolvers: [AntDesignVueResolver({ importStyle: false, resolveIcons: true })]
@@ -113,8 +114,9 @@ export default ({ mode }) => defineConfig({
     },
     postcss: { plugins: [postcssPresetEnv()] }
   },
-  resolve: {
-    // ↓路径别名，主要是这部分
-    alias: { '@': resolve(__dirname, './src') }
+  resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
+  server: {
+    port: 8081,
+    open: 'http://localhost:8081'
   }
 })

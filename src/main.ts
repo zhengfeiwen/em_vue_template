@@ -3,7 +3,7 @@ import './style/index.scss'
 import App from './App.vue'
 import router from './router/index'
 import { createPinia } from 'pinia'
-import 'vue-global-api' // unplugin-auto-import插件的继承者，解决因为它的自动导入导致的eslint报错
+import 'vue-global-api' // unplugin-auto-import鎻掍欢鐨勭户鎵胯�咃紝瑙ｅ喅鍥犱负瀹冪殑鑷姩瀵煎叆瀵艰嚧鐨別slint鎶ラ敊
 import { FloatButton, FloatButtonGroup } from 'ant-design-vue'
 // import 'ant-design-vue/dist/reset.css'
 import 'virtual:svg-icons-register'

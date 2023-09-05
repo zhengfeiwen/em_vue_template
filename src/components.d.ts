@@ -7,12 +7,27 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AAvatar: typeof import('ant-design-vue/es')['Avatar']
     ABackTop: typeof import('ant-design-vue/es')['BackTop']
+    ABadge: typeof import('ant-design-vue/es')['Badge']
     AButton: typeof import('ant-design-vue/es')['Button']
+    ACol: typeof import('ant-design-vue/es')['Col']
     AConfigProvider: typeof import('ant-design-vue/es')['ConfigProvider']
+    AFloatButton: typeof import('ant-design-vue/es')['FloatButton']
+    AFloatButtonGroup: typeof import('ant-design-vue/es')['FloatButtonGroup']
+    AInputSearch: typeof import('ant-design-vue/es')['InputSearch']
+    AMenu: typeof import('ant-design-vue/es')['Menu']
+    AMenuItem: typeof import('ant-design-vue/es')['MenuItem']
+    ARow: typeof import('ant-design-vue/es')['Row']
+    BellFilled: typeof import('@ant-design/icons-vue')['BellFilled']
+    BellOutlined: typeof import('@ant-design/icons-vue')['BellOutlined']
+    GithubFilled: typeof import('@ant-design/icons-vue')['GithubFilled']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
+    MailOutlined: typeof import('@ant-design/icons-vue')['MailOutlined']
+    Nav: typeof import('./components/nav/index.tsx')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SvgIcon: typeof import('./components/svgIcon.vue')['default']
+    UserOutlined: typeof import('@ant-design/icons-vue')['UserOutlined']
   }
 }

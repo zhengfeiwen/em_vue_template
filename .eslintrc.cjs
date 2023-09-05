@@ -1,21 +1,22 @@
+/* eslint-env node */
+require('@rushstack/eslint-patch/modern-module-resolution');
+
 module.exports = {
   root: true,
-  parserOptions: {
-    ecmaVersion: 2020,
-    sourceType: 'module',
-    parser: '@typescript-eslint/parser' // Vue3一直报错 error: Parsing error: Unexpected token解决方法 
-  },
-  parser: 'vue-eslint-parser',
   extends: [
     'plugin:vue/vue3-essential',
-    'plugin:vue/vue3-strongly-recommended',
-    'plugin:vue/vue3-recommended'
+    'eslint:recommended',
+    '@vue/eslint-config-typescript/recommended',
+    'plugin:vue/vue3-recommended',
+    'plugin:tailwindcss/recommended'
   ],
   env: {
-    browser: true,
-    node: true,
-    es6: true
+    'vue/setup-compiler-macros': true,
+    'browser': true,
+    'amd': true,
+    'node': true
   },
+  plugins: ['tailwindcss'],
   rules: {
     '@typescript-eslint/ban-ts-ignore': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
@@ -28,15 +29,15 @@ module.exports = {
     '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+    'no-var': 'error',
     //关闭组件命名规则
     'vue/multi-word-component-names': 'off',
-    'no-var': 'error',
     // 使用单引号
     quotes: [2, 'single', 'avoid-escape'],
     // 使用 === 替代 ==
     eqeqeq: [2, 'allow-null'],
     //强制使用分号结尾
-    semi: ['error', 'never'],
+    semi: 'off',
     // 强制使用两个空格执行一致的缩进样式
     indent: ['error', 2],
     //禁止出现多个空格
@@ -110,4 +111,4 @@ module.exports = {
     'multiline-ternary': ['error', 'always'],
     'object-curly-newline': ['error', { 'multiline': true }]
   }
-}
+};

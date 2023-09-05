@@ -1,6 +1,10 @@
 // sidebar
-$layoutHeaderHight:60px;
+$layoutHeaderHight: 60px;
+$mainColor: #409eff;
+$bgColor: #f2f3f5;
 
 :export {
   layoutHeaderHight: $layoutHeaderHight;
+  mainColor: $mainColor;
+  bgColor: $bgColor;
 }
