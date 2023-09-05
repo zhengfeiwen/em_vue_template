@@ -36,8 +36,10 @@ module.exports = {
     quotes: [2, 'single', 'avoid-escape'],
     // 使用 === 替代 ==
     eqeqeq: [2, 'allow-null'],
-    //强制使用分号结尾
-    semi: 'off',
+    // 强制使用分号结尾
+    semi: ['error', 'never'],
+    //不允许不必要的分号
+    'no-extra-semi': 'error',
     // 强制使用两个空格执行一致的缩进样式
     indent: ['error', 2],
     //禁止出现多个空格
