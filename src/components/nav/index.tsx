@@ -1,4 +1,4 @@
-import { defineComponent, onMounted, render } from 'vue'
+import { defineComponent, onMounted } from 'vue'
 import { MenuOptionItem } from '@/type/index'
 import { SlotsType } from 'vue'
 import './index.scss'
@@ -12,16 +12,15 @@ export default defineComponent({
   name: 'Navigator',
   props: {
     activeKey: { type: String, default: 'flowing' },
-    menu: { type: Array<MenuOptionItem> }
+    menu: { type: Array<MenuOptionItem>, default: [] }
   },
   slots: Object as SlotsType<{
     default: { foo: string; bar: number }
     footer: { name: string }
   }>,
   emits: ['set-active-key'],
-  setup(props, { emit, slots }) {
-    console.log('props', props.activeKey)
-    const { activeKey, menu } = props
+  setup(props, { emit }) {
+    const { menu } = toRefs(props)
     let i = 0
     const onChange = (i: number) => {
       return i + 1
@@ -37,7 +36,7 @@ export default defineComponent({
     })
     return () => (
       <div class='nav-body'>
-        {menu?.map(v => {
+        {menu.value.map(v => {
           return <div class="nav-item">
             {v.icon}
             {label}

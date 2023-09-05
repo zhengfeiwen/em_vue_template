@@ -13,10 +13,7 @@
 <script setup lang='ts'>
 import enUS from 'ant-design-vue/es/locale/en_US'
 import zhCN from 'ant-design-vue/es/locale/zh_CN'
-import { RouterLink, useRoute, useRouter } from 'vue-router'
 import { ref } from 'vue'
-const route = useRoute()
-const router = useRouter()
 
 const locale = ref(zhCN.locale)
 </script>
