@@ -31,12 +31,12 @@
 </template>
 
 <script setup lang="tsx" name="home">
-import { ref } from 'vue';
+import { ref } from 'vue'
 import Nav from '@/components/nav/index'
 import { MenuOptionItem } from '@/type/index'
 import { GithubFilled } from '@ant-design/icons-vue'
 
-let activeKey = ref('following');
+let activeKey = ref('following')
 const myMenuOptions = ref<MenuOptionItem[]>([
   { label: '关注', key: 'following', path: '/following', icon: <GithubFilled /> },
   { label: '综合', key: 'recommended', path: '/recommended', icon: 'GithubFilled' },
@@ -46,15 +46,15 @@ const myMenuOptions = ref<MenuOptionItem[]>([
   { label: 'PHP', key: 'php', path: '/php', icon: 'GithubFilled' },
   { label: 'MySQL', key: 'mysql', path: '/mysql', icon: 'GithubFilled' },
   { label: '排行榜', key: 'hot', path: '/hot', icon: 'GithubFilled' }
-]);
+])
 
 const setActiveKey = function() {
-  activeKey.value = 'test';
-};
+  activeKey.value = 'test'
+}
 
 const onNavClick = function() {
 
-};
+}
 
 </script>
 
